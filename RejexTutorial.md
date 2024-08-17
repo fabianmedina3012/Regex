@@ -31,11 +31,33 @@ Regexes can be used in various programming languages and tools to search for and
 
 ### Anchors
 
+An anchor is a special character that specifies the position of a pattern within a string of text. In this regex, the \b characters at the beginning and end of the pattern are word boundary anchors.
+
+Word boundary anchors are used to match the position of a word in a string of text. The \b anchor matches the position between a word character (such as a letter or number) and a non-word character (such as a space or punctuation mark), or vice versa. This helps to ensure that the regex only matches complete words and not parts of other words.
+
+In the case of this regex, the word boundary anchors are used to ensure that the regex only matches complete email addresses and not parts of other words. For example, the regex would match example@gmail.com, but it would not match example@gm ail.com, because there is a space between gm and ail.
+
 ### Quantifiers
+
+A quantifier is a special character that specifies how many times a pattern should be repeated in a string of text. In this regex, the + symbol is a quantifier.
+
+The + quantifier specifies that the pattern preceding it should be repeated one or more times. In this case, the pattern [A-Z0-9._%+-] specifies a character class that includes uppercase letters, numbers, and certain symbols. The + quantifier specifies that this character class should be repeated one or more times, which means that the regex will match one or more uppercase letters, numbers, or symbols.
+
+There is also a quantifier in the regex in the form of the {2,} symbol. This quantifier specifies that the pattern preceding it should be repeated at least two times. In this case, the pattern [A-Z] specifies a character class that includes uppercase letters. The {2,} quantifier specifies that this character class should be repeated at least two times, which means that the regex will match at least two uppercase letters.
 
 ### OR Operator
 
+There is no "or" operator in the regex expression \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b.
+
+The "or" operator in regex is typically represented by the | symbol. This operator allows you to specify multiple alternative patterns, and the regex will match any of the specified patterns. For example, the regex cat|dog will match either the word "cat" or the word "dog".
+
+In this regex expression, the | operator is not used. Instead, the different patterns are specified using character classes, character sets, and quantifiers.
+
 ### Character Classes
+
+A character class is a set of characters that are enclosed in square brackets, and it matches any single character that is a member of the class. For example, the character class [A-Z] matches any uppercase letter.
+
+A character set is a set of characters that are enclosed in square brackets and separated by a hyphen, and it matches any single character that falls within the range specified by the set. For example, the character set [0-9] matches any digit.
 
 ### Flags
 
