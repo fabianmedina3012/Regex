@@ -61,9 +61,31 @@ A character set is a set of characters that are enclosed in square brackets and 
 
 ### Flags
 
+There are no flags in the regex expression \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b.
+
+A flag is a special character that is added to the end of a regex expression and modifies the way the regex is interpreted. Flags are typically used to change the matching behavior of the regex, such as by specifying whether the regex should be case-sensitive or whether it should match across multiple lines.
+
+In this regex expression, no flags are used. This means that the regex will be interpreted according to the default matching behavior of the tool or programming language being used. For example, if the regex is being used in a programming language like Python, the default matching behavior may be case-sensitive and may not match across multiple lines.
+
+If you want to use flags in a regex expression, you can add them after the closing slash (/) at the end of the expression. For example, you could use the i flag to make the regex case-insensitive, like this: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i.
+
 ### Grouping and Capturing
 
+Grouping allows you to group multiple patterns together and apply quantifiers or other operations to the group as a whole. Grouping is achieved using parentheses (( and )). For example, the regex (cat|dog)+ will match one or more occurrences of the words "cat" or "dog".
+
+Capturing allows you to extract the matched text as a separate string or variable. Capturing is achieved using parentheses (( and )). For example, the regex (cat|dog) will capture the matched text (either "cat" or "dog") as a separate string or variable.
+
+In the regex expression \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b, the [A-Z0-9._%+-]+ and [A-Z0-9.-]+ patterns are grouped using parentheses. The + quantifier is applied to the group as a whole, which means that the regex will match one or more occurrences of the character class (uppercase letters, numbers, and certain symbols).
+
+There is also capturing in the regex expression, as the entire email address (including the local part, domain part, and top-level domain) is enclosed in parentheses. This means that the matched email address will be captured as a separate string or variable.
+
 ### Bracket Expressions
+
+Brackets are used in regex to specify a character class or a character set. A character class is a set of characters that are enclosed in square brackets, and it matches any single character that is a member of the class. For example, the character class [A-Z] matches any uppercase letter.
+
+A character set is a set of characters that are enclosed in square brackets and separated by a hyphen, and it matches any single character that falls within the range specified by the set. For example, the character set [0-9] matches any digit.
+
+In the regex expression \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b, there are two character classes: [A-Z0-9._%+-] and [A-Z]. The first character class specifies a set of uppercase letters, numbers, and certain symbols, and the second character class specifies a set of uppercase letters. These character classes are used in conjunction with quantifiers (the + and {2,} symbols) to specify a pattern for matching email addresses in a string of text. 
 
 ### Greedy and Lazy Match
 
